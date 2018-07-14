@@ -1,5 +1,5 @@
 #cmake版本要求
-cmake_minimum_required (VERSION 3.10)
+cmake_minimum_required (VERSION 2.8)
 
 #project name
 project (leetcode)
@@ -19,7 +19,7 @@ IF (WIN32)
 ELSEIF (APPLE)
 	MESSAGE(STATUS "Now is Apple systens.")
 ELSEIF (UNIX)
-	MESSAGE(STATUS "Now is UNIX-like OS's. Including aPPLE os x  and CygWin")
+	MESSAGE(STATUS "Now is UNIX-like OS's.")
 ENDIF ()
 
 #src目录
@@ -27,7 +27,7 @@ AUX_SOURCE_DIRECTORY (src DIR_SRCS)
 
 # 检查系统是否支持 max 函数
 INCLUDE (CheckFunctionExists)
-check_function_exists (max HAVE_MAX)
+check_function_exists (log HAVE_MAX)
 
 #是否使用math
 OPTION (USE_MYMATH "Use MathFunctions provided math implementation" ON)
@@ -42,15 +42,15 @@ ENDIF (USE_MYMATH)
 SET (MAINSRC ${DIR_SRCS})
 
 #生成可执行文件
-ADD_EXECUTABLE (Demo ${MAINSRC})
+ADD_EXECUTABLE (main ${MAINSRC})
 
 #链接库文件
-TARGET_LINK_LIBRARIES (Demo ${EXTRA_LIBS})
+TARGET_LINK_LIBRARIES (main ${EXTRA_LIBS})
 
 # 启用测试
 ENABLE_TESTING ()
 # 测试程序是否成功运行
-ADD_TEST (test_run Demo 5 2)
+ADD_TEST (test_run main 5 2)
 
 # 定义一个宏，用来简化测试工作
 MACRO (do_test arg1 arg2 result)
