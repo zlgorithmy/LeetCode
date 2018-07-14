@@ -1,0 +1,6 @@
+//the configured options and settings for Leetcode
+
+#define LEETCODE_VERSION_MAJOR @LEETCODE_VERSION_MAJOR@
+#define LEETCODE_VERSION_MINOR @LEETCODE_VERSION_MINOR@
+
+#cmakedefine USE_MYMATH
