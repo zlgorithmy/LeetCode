@@ -14,5 +14,6 @@ int main(int argc, char const *argv[])
          << "version:" << LEETCODE_VERSION_MAJOR << "." << LEETCODE_VERSION_MINOR
          << endl;
     cout << "max(2,6)" << max(2, 6) << endl;
+    auto d = max(2, 6);
     return 0;
 }
