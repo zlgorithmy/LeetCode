@@ -1,1 +1,1 @@
-int max(int, int);
+int mmax(int, int);
