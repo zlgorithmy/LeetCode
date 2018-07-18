@@ -10,9 +10,9 @@ set (LEETCODE_VERSION_MINOR 0)
 
 #平台判定
 IF (WIN32)
-	MESSAGE(STATUS "Using windows")
+	MESSAGE(STATUS "Using on windows")
 ELSEIF (APPLE)
-	MESSAGE(STATUS "Using Apple systens.")
+	MESSAGE(STATUS "Using on osx.")
 ELSEIF (UNIX)
 	MESSAGE(STATUS "Using UNIX-like OS.")
 ENDIF ()
