@@ -29,8 +29,8 @@ OPTION (USE_MYMATH "Use MathFunctions provided math implementation" ON)
 
 IF (USE_MYMATH)
 	INCLUDE_DIRECTORIES ("${PROJECT_SOURCE_DIR}/src/MathFunctions")
-	ADD_SUBDIRECTORY (src/MathFunctions)
-  	SET (EXTRA_LIBS ${EXTRA_LIBS} MathFunctions)
+	ADD_SUBDIRECTORY (src/Utility)
+  	SET (EXTRA_LIBS ${EXTRA_LIBS} Utility)
 ENDIF (USE_MYMATH)
 
 #环境变量

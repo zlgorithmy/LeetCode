@@ -1,10 +1,10 @@
 #include "include.h"
 #include <iostream>
 
-#include "../build/config.h"
+#include "config.h"
 
 #ifdef USE_MYMATH
-#include "MathFunctions/math.h"
+#include "Utility/utility.h"
 #endif
 
 using namespace std;
