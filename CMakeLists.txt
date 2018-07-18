@@ -8,18 +8,13 @@ project (leetcode)
 set (LEETCODE_VERSION_MAJOR 1)
 set (LEETCODE_VERSION_MINOR 0)
 
-configure_file (
-  "${PROJECT_SOURCE_DIR}/src/config.h.in"
-  "${PROJECT_BINARY_DIR}/config.h"
-)
-
 #平台判定
 IF (WIN32)
-	MESSAGE(STATUS "Now is windows")
+	MESSAGE(STATUS "Using windows")
 ELSEIF (APPLE)
-	MESSAGE(STATUS "Now is Apple systens.")
+	MESSAGE(STATUS "Using Apple systens.")
 ELSEIF (UNIX)
-	MESSAGE(STATUS "Now is UNIX-like OS's.")
+	MESSAGE(STATUS "Using UNIX-like OS.")
 ENDIF ()
 
 #src目录
@@ -27,7 +22,7 @@ AUX_SOURCE_DIRECTORY (src DIR_SRCS)
 
 # 检查系统是否支持 max 函数
 INCLUDE (CheckFunctionExists)
-check_function_exists (log HAVE_MAX)
+check_function_exists (max HAVE_MAX)
 
 #是否使用math
 OPTION (USE_MYMATH "Use MathFunctions provided math implementation" ON)
@@ -40,6 +35,12 @@ ENDIF (USE_MYMATH)
 
 #环境变量
 SET (MAINSRC ${DIR_SRCS})
+
+#生成config.h
+configure_file (
+  "${PROJECT_SOURCE_DIR}/src/config.h.in"
+  "${PROJECT_SOURCE_DIR}/src/config.h"
+)
 
 #生成可执行文件
 ADD_EXECUTABLE (main ${MAINSRC})
