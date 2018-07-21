@@ -55,7 +55,7 @@ ADD_TEST (test_run main 5 2)
 
 # 定义一个宏，用来简化测试工作
 MACRO (do_test arg1 arg2 result)
-	ADD_TEST (test_${arg1}_${arg2} Demo ${arg1} ${arg2})
+	ADD_TEST (test_${arg1}_${arg2} main ${arg1} ${arg2})
 	SET_TESTS_PROPERTIES (test_${arg1}_${arg2} PROPERTIES PASS_REGULAR_EXPRESSION ${result})
 ENDMACRO (do_test)
 
